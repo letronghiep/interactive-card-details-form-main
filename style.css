@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.bg-main-desktop{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+}
+.bg-main-mobile {
+    display: none;
+}
+/* Main css */
+.container {
+    display: flex;
+    max-width: 1440px;
+    position: relative;
+    margin: auto;
+    height: 800px;
+    width: 100%;
+}
+.card-display {
+    flex: 0 1 600px;
+    position: relative;
+    flex: 1 0 auto;
+}
+.card-details, .thank-you {
+    position: relative;
+    flex: 0 1 45%;
+}
+.card-front, 
+.card-back{
+    position: absolute;
+    width: fit-content;
+}
+.card-front {
+    left: 210px;
+    top: 130px;
+}
+.card-back {
+    left: 280px;
+    bottom: 130px;
+}
+.card-number-display,
+.cardholder-display,
+.expiry-month-display,
+.expiry-year-display,
+.card-logo 
+{
+    position: absolute;
+}
+.card-logo{
+    top: 30px;
+    left: 30px;
+    z-index: 3;
+    object-fit: cover;
+}
+.card-number-display{
+    bottom: 80px;
+    font-size: 30px;
+    left: 30px;
+    color: hsl(0, 0%, 100%);
+    letter-spacing: 3px;
+
+}
+
+.cardholder-display{
+   bottom: 30px;
+    left: 30px;
+   font-size: 0.9rem;
+   text-transform: uppercase;
+   color:hsl(0, 0%, 100%);
+   letter-spacing: 2px;
+}
+.cardholder-display{
+    left: 5%;
+}
+.expiry-year-display{
+    bottom: 30px;
+    right: 30px;
+    font-size: 0.9rem;
+    color:hsl(0, 0%, 100%);
+}
+.expiry-month-display{
+    bottom: 30px;
+    right: 55px;
+    color:hsl(0, 0%, 100%);
+    font-size: 0.9rem;
+
+}
+.cvc-display {
+    color: white;
+    position: absolute;
+    right: 60px;
+    bottom: 117px;
+}
+#form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+label .form-control {
+    margin-bottom: 30px;
+}
+#form input {
+    width: 100%;
+    margin-top: 10px;
+    padding: 16px 15px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: 1px solid hsl(270, 3%, 87%);
+    outline: 0px solid hsl(249, 99%, 64%);
+    overflow: hidden;
+    font-size: 18px;
+}
+#form input::placeholder{
+    font-weight: 300;
+}
+.errorMsg {
+    color: hsl(0, 100%, 66%);
+    font-size: 16px;
+    padding-top: 2px;
+    padding-left: 2px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+#form .form-control:hover{
+    border: 1px solid  hsl(249, 99%, 64%);
+}
+#form .form-control:active{
+    border: 1px solid hsl(278, 94%, 30%);
+}
+.invalid{
+    border: 1px solid hsl(0, 100%, 66%) !important;
+}
+.flex {
+    display: flex;
+    gap: 20px;
+    /* margin-bottom: 40px; */
+    
+}
+.flex #expiry{
+    width: 90px;
+    margin-right: 5px;
+}
+.flex #card-cvc{
+    width: 135px;
+}
+.expiry-wrapper {
+    display: flex;
+    gap: 10px;
+}
+.expiry-dis {
+    right: 48px;
+    position: absolute;
+    bottom: 32px;
+    color: white;
+    font-size: 0.9rem;
+}
+input #expiry, input #card-cvc{
+    margin-top: 5px;
+}
+.card-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submit-btn, .continue-btn {
+    all: unset;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.is-confirmed{
+    display: none !important;
+}
+.submit-btn:hover,
+.continue-btn:hover {
+    opacity: 0.8;
+}
+/* Submited */
+.thank-you {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.thank-you-img {
+    margin-bottom: 35px;
+    object-fit: cover;
+}
+.thank-you-header {
+    font-size: 29px;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+}
+.thank-you p {
+    font-size: 18px;
+    margin-top: 16px;
+    color: hsl(270, 6%, 60%);
+}
+.thank-you .continue-btn {
+    width: 100%;
+    margin-top: 54px;
+}
+@media only screen and (max-width: 1024px) {
+    .card-front {
+        left: 75px;
+    }
+    .card-back {
+        left: 140px;
+    }
+}
+@media only screen and (max-width: 768px){
+    body {
+        flex-direction: column;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .bg-main-desktop {
+        display: none;
+    }
+    .bg-main-mobile{
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 300px;
+    }
+    .card-front {
+        top: 125px;
+        z-index: 5;
+    }
+    .card-back{
+        top: 0;
+        left: 300px;
+    }
+    .card-front-img,
+    .card-back-img{
+        max-width: 400px;
+        width: 100%;
+    }
+    .cvc-display{
+        top: 97px;
+        bottom: 0;
+        right: 45px;
+    }
+    .card-details {
+        position: relative;
+        flex: 0 1 50%;
+    }
+}
+@media only screen and (max-width:425px){
+    .bg-main-mobile{
+        height: 250px;
+    }
+    .card-front-img,
+    .card-back-img{
+        max-width: 300px;
+    }
+    .card-back {
+        top: 16px;
+        left: 100px;
+    }
+    .card-front{
+        top: 110px;
+        left: 30px;
+    }
+    .card-number-display{
+        font-size: 14px;
+        bottom: 60px;
+        letter-spacing: 4px;
+    }
+    .cardholder-display{
+        font-size: 12px;
+    }
+    .expiry-month-display, .expiry-year-display {
+        font-size: 12px;
+    }
+    .expiry-year-display {
+        right: 30px;
+    }
+    .cvc-display{
+        bottom: unset;
+        top: 72px;
+        font-size: 12px;
+        right: 34px;
+    }
+    .card-details{
+        position: relative;
+        flex: 0 1 65%;
+    }
+    .card-logo {
+        top: 20px;
+        left: 20px;
+        z-index: 3;
+        object-fit: cover;
+        width: 60px;
+    }
+    .title {
+        font-size: 16px;
+    }
+    #form input {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+    .flex {
+        margin-bottom: 0;
+    }
+    .submit-btn, .continue-btn{
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+}
